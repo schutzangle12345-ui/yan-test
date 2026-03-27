@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | yan-test - AI Luxury Concierge</title>
+    <meta name="description" content="Learn about BookLux by yan-test, the AI chat concierge redefining luxury travel through transparent pricing and seamless booking for jets, yachts, and villas.">
+    
+    <!-- Google Fonts: Inter for Modern Minimalist Look -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;600&display=swap');
+
+        :root {
+            /* Brand Colors */
+            --color-primary: #0058a3;
+            --color-primary-dark: #00427a;
+            --color-accent: #ffcc00;
+            
+            /* UI Colors */
+            --color-background: #ffffff;
+            --color-surface: #fafafa;
+            --color-text: #121212;
+            --color-text-muted: #666666;
+            --color-border: #eeeeee;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            
+            /* Spacing & Borders */
+            --section-padding: 120px;
+            --container-width: 1100px;
+            --border-radius: 24px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .cta-button {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: calc(var(--section-padding) * 1.5) 0 var(--section-padding);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 100;
+            line-height: 1.1;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* About Content Sections */
+        .section-padding {
+            padding: var(--section-padding) 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 200;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .content-block p {
+            margin-bottom: 24px;
+            color: var(--color-text-muted);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* Values Cards */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .value-card {
+            padding: 48px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        .value-card p {
+            color: var(--color-text-muted);
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-text);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Mission Statement - Centered */
+        .mission-box {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 100px 60px;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .mission-box h2 {
+            color: white;
+            margin-bottom: 32px;
+        }
+
+        .mission-box p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 200;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--color-border);
+            background: var(--color-surface);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo img {
+            margin-bottom: 24px;
+        }
+
+        .footer-links h4 {
+            font-weight: 600;
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 20px;
+            height: 20px;
+            fill: var(--color-text-muted);
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            fill: var(--color-primary);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB3klEQVR4AeyUIUjDQRTG39YFBS2mLRrFFYPgkmARTAYHujCxOWyCBgWbzCYuTGEGk2ARTBMMlonRuCWLiibr3O/mO46b//0HKgO5wcfde/e97333/seSMuBfMBAmECYQJpCUpWprkIj8BKnhF9mYvpaTxbLU8vvS2CxKay/XF+BSQy0aaEX94XYZOF6oSH19xzQszZ/JyuStzKYfpZeILw6XGmrRwBCaaPtcawACNyxkajI13vB5P47RRJse9FJBY4BxQSCZ2K4KKNezhGb/XUwOAqsP8uD+KW3r4RCTpxc92RsDqZFn9rFAREnuLcgxXm4HiEHmaJfFwo21Z8dA+8FZVsRm7TJvT2jCLWyiveEcg3pLXdtH5uGyAp0s74TYGGi+j7LvCW6oBLeR5jh3jbm3ha88jLLXnh0Db2PkYkEDJbkNyCFMI0Cs4FNRx6o5mje/ehoD2cqW6MggA14sBeyBH5Nzz4kVbl4/Fauev34MCT3hGQNsuBHu+UZqhvxvAU206UEv1bUGNMEoIaQPSlK8WpbThxm5aUwIY1NO3AqXGmrRQAtNtP3aLgNKQOTwbk5WLwpmXIjgvh/AZcTUooGW6vprUs5ziUEicgK+07+Kg4EwgTCB/z+BuP+PTwAAAP//l9XhZgAAAAZJREFUAwBOamVQ+wjEgAAAAABJRU5ErkJggg==" alt="yan-test logo" style="height:40px;object-fit:contain">
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="auth.html">Sign In</a>
+                    <a href="auth.html" class="cta-button">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <span class="badge">Our Story</span>
+                <h1>Luxury access, <span class="italic">uncomplicated</span>.</h1>
+                <p>BookLux is an AI-powered chat concierge designed to eliminate the friction from high-end travel and lifestyle management.</p>
+            </div>
+        </section>
+
+        <!-- Problem/Solution Grid -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="grid-2">
+                    <div class="content-block">
+                        <h2>The complexity of <span class="italic">exclusive</span> bookings.</h2>
+                        <p>For too long, booking a private jet, a luxury villa, or a chartered yacht has meant navigating a maze of brokers, hidden fees, and endless paperwork. Busy clients and family offices shouldn't have to manage dozens of vendors just to plan a single itinerary.</p>
+                        <p>We saw the transparency gap in the market. We saw the hours wasted on phone calls for simple price comparisons. We decided to fix it.</p>
+                    </div>
+                    <div style="background-color: var(--color-surface); height: 400px; border-radius: var(--border-radius); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; padding: 40px; text-align: center;">
+                        <p style="font-size: 1.5rem; font-weight: 200; color: var(--color-primary);">"Our mission is to return the most valuable asset to our clients: <span class="italic">Time.</span>"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="section-padding" style="background-color: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+            <div class="container">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h2>Our Core Values</h2>
+                    <p style="color: var(--color-text-muted); font-weight: 300;">We operate at the intersection of high-touch service and high-tech efficiency.</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="badge" style="background: white; border: 1px solid var(--color-border);">01</div>
+                        <h3>Radical Transparency</h3>
+                        <p>No hidden markups. We provide clear pricing guides for jets, yachts, and villas so you can decide with confidence.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="badge" style="background: white; border: 1px solid var(--color-border);">02</div>
+                        <h3>Single-Point Logistics</h3>
+                        <p>From private chefs to airport transfers, manage your entire trip via one chat interface. No more fragmented vendor lists.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="badge" style="background: white; border: 1px solid var(--color-border);">03</div>
+                        <h3>Adaptive Intelligence</h3>
+                        <p>Our AI learns your preferences—from dietary restrictions to preferred jet models—to make every subsequent booking faster.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Box -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="mission-box">
+                    <h2>The BookLux Vision</h2>
+                    <p>Whether it’s a midsize jet for a business trip, a luxury villa on the Côte d'Azur, or a private driver in Dubai, yan-test ensures the experience is <span class="italic">seamless, safe, and superior.</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section-padding" style="text-align: center;">
+            <div class="container">
+                <h2 style="margin-bottom: 16px;">Ready to simplify your travel?</h2>
+                <p style="margin-bottom: 40px; color: var(--color-text-muted);">Join our exclusive network of luxury travelers today.</p>
+                <a href="auth.html" class="cta-button" style="padding: 20px 60px; font-size: 1.1rem;">Start a Conversation</a>
+                <p style="margin-top: 24px; font-size: 0.9rem; color: var(--color-text-muted);">Trusted by family offices and lifestyle managers worldwide.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB3klEQVR4AeyUIUjDQRTG39YFBS2mLRrFFYPgkmARTAYHujCxOWyCBgWbzCYuTGEGk2ARTBMMlonRuCWLiibr3O/mO46b//0HKgO5wcfde/e97333/seSMuBfMBAmECYQJpCUpWprkIj8BKnhF9mYvpaTxbLU8vvS2CxKay/XF+BSQy0aaEX94XYZOF6oSH19xzQszZ/JyuStzKYfpZeILw6XGmrRwBCaaPtcawACNyxkajI13vB5P47RRJse9FJBY4BxQSCZ2K4KKNezhGb/XUwOAqsP8uD+KW3r4RCTpxc92RsDqZFn9rFAREnuLcgxXm4HiEHmaJfFwo21Z8dA+8FZVsRm7TJvT2jCLWyiveEcg3pLXdtH5uGyAp0s74TYGGi+j7LvCW6oBLeR5jh3jbm3ha88jLLXnh0Db2PkYkEDJbkNyCFMI0Cs4FNRx6o5mje/ehoD2cqW6MggA14sBeyBH5Nzz4kVbl4/Fauev34MCT3hGQNsuBHu+UZqhvxvAU206UEv1bUGNMEoIaQPSlK8WpbThxm5aUwIY1NO3AqXGmrRQAtNtP3aLgNKQOTwbk5WLwpmXIjgvh/AZcTUooGW6vprUs5ziUEicgK+07+Kg4EwgTCB/z+BuP+PTwAAAP//l9XhZgAAAAZJREFUAwBOamVQ+wjEgAAAAABJRU5ErkJggg==" alt="yan-test logo" style="height:32px;">
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; max-width: 300px;">The AI-powered concierge for ultra-high-net-worth individuals and their teams.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="auth.html">Sign In</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Booking Rules</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 yan-test. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg class="social-icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg class="social-icon" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
